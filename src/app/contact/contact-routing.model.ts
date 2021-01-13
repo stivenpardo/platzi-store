@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ContactComponent } from "./components/contact/contact.component";
+import { AdminGuard } from "../admin.guard"
 
 const ROUTES: Routes = [
   {
     path:'',
+    canActivate: [AdminGuard],
     component: ContactComponent
   },
 ];

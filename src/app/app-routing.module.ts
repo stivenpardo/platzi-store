@@ -1,46 +1,36 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule, PreloadAllModules, PreloadingStrategy } from '@angular/router';
-
+import { Routes, RouterModule, PreloadAllModules, } from '@angular/router';
 import { DemoComponent } from './demo/demo.component'
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { LayoutComponent } from './layout/layout.component';
-
 const routes: Routes = [
-
   {
-    path : '',
-    component : LayoutComponent,
+    path: '',
+    component: LayoutComponent,
     children: [
       {
-        path : '',
-        redirectTo : '/home',
+        path: '',
+        redirectTo: 'home',
         pathMatch: 'full'
       },
       {
-        path : 'home',
+        path: 'home',
         loadChildren: () => import('./home/home.model').then(m => m.HomeModule)
       },
       {
-        path : 'products',
-        loadChildren: () => import('./product/product.module').then(m=> m.ProductModule)
-      },
-      //Todo for working Details products
-      {
-        path : 'products/:id',
-        loadChildren: () => import('./product/product.module').then(m=> m.ProductModule)
-      }
-      ,
-      {
-        path : 'contact',
-        loadChildren: () => import('./contact/contact.module').then(m=>m.ContactModule)
+        path: 'products',
+        loadChildren: () => import('./product/product.module').then(m => m.ProductModule)
       },
       {
-        path : 'demo',
+        path: 'contact',
+        loadChildren: () => import('./contact/contact.module').then(m => m.ContactModule)
+      },
+      {
+        path: 'demo',
         component: DemoComponent
       },
       {
-        path : '**',
-        component: PageNotFoundComponent
+        path: '**',
+        loadChildren: () => import('./page-not-found/page-not-found.module').then(m => m.PageNotFoundModule)
       }
     ]
   }

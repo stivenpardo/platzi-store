@@ -20,11 +20,11 @@ import { CoreModule } from "../core/core.module";
     ProductComponent,
   ],
   imports: [
+    RouterModule,
     CommonModule,
     SharedModule,
     CoreModule,
     ProductRoutingModule,
-    RouterModule,
   ]
 })
 export class ProductModule { }
