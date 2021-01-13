@@ -5,4 +5,7 @@
   <div>
     <button (click)="addCar()"> Agregar al carrito </button>
   </div>
+  <div>
+    <a [routerLink]="['/products',product.id]"> Ver detalle </a>
+  </div>
 </div>

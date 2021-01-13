@@ -1,4 +1,4 @@
-import { IProduct } from '../../IProduct.model';
+import { IProduct } from '../../../IProduct.model';
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 @Component({
   selector: 'app-product',
@@ -7,8 +7,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 })
 export class ProductComponent {
 
-  @Input()
-  product!: IProduct;
+  @Input() product: IProduct;
   @Output() productClicked: EventEmitter<any> = new EventEmitter();
 
   addCar(){
