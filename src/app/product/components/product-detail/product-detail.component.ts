@@ -10,6 +10,7 @@ import { ProductsService } from '../../../core/services/products/products.servic
 })
 export class ProductDetailComponent implements OnInit {
   product: IProduct;
+  idProduct : string;
   constructor(
     private route: ActivatedRoute,
     private productService: ProductsService
@@ -17,9 +18,9 @@ export class ProductDetailComponent implements OnInit {
  // ngOnit para recibir datos
   ngOnInit(): void {
     this.route.params.subscribe((params: Params): void => {
-      let idProduct : string = params.id;
+      this.idProduct = params.id;
       //this.product = this.productService.getProduct(idProduct);
-      this.fetchProduct(idProduct);
+      this.fetchProduct(this.idProduct);
       console.log(this.product)
     })
   }
@@ -42,6 +43,18 @@ export class ProductDetailComponent implements OnInit {
     this.productService.createProduct(NEWPRODUCT)
     .subscribe();
   }
-
+  updateProduct() {
+    const CHANGEPRODUCT: Partial<IProduct> = {
+      title: 'smarth Platzi',
+      price: 400.000,
+      description:'Este es el que usted necesita para aprender',
+    }
+    this.productService.updateProduct(this.idProduct, CHANGEPRODUCT)
+    .subscribe();
+  }
+  deleteProduct() {
+    this.productService.deleteProduct(this.idProduct)
+    .subscribe();
+  }
 
 }

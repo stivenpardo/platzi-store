@@ -7,7 +7,9 @@
       <li>Nombre: {{product.title}} </li>
       <li>Precio: {{product.price | currency}}  </li>
     </ul>
-    <a mat-button (click)="createProduct()">Crear producto</a>
     <p> {{product.description}} </p>
+    <a mat-button (click)="createProduct()">Crear producto</a>
+    <a mat-button (click)="updateProduct()">Actualizar producto</a>
+    <a mat-button (click)="eliminarProduct()">Eliminar producto</a>
   </div>
 </div>

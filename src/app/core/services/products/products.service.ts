@@ -23,4 +23,12 @@ export class ProductsService {
     let newProduct = this.http.post(`${environment.url_api}/products`, product);
     return newProduct;
   }
+  updateProduct(id: string, changes: Partial<IProduct> ){
+    let updateProduct = this.http.put(`${environment.url_api}/products/${id}`, changes);
+    return updateProduct;
+  }
+  deleteProduct(id: string){
+    let deleteProduct = this.http.delete(`${environment.url_api}/products/${id}`);
+    return deleteProduct;
+  }
 }
