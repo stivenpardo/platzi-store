@@ -1,61 +1,26 @@
 import { Injectable } from '@angular/core';
 import { IProduct } from '../../../IProduct.model';
-
+import { HttpClient } from '@angular/common/http';
+import { environment  } from "../../../../environments/environment";
 @Injectable({
   providedIn: 'root'
 })
 export class ProductsService {
 
-  constructor() { }
-  products: IProduct[] = [
-    {
-      id: '1',
-      image: 'assets/images/camiseta.png',
-      title: 'Camiseta',
-      price: 80000,
-      description: 'bla bla bla bla bla'
-    },
-    {
-      id: '2',
-      image: 'assets/images/hoodie.png',
-      title: 'Hoodie',
-      price: 80000,
-      description: 'bla bla bla bla bla'
-    },
-    {
-      id: '3',
-      image: 'assets/images/mug.png',
-      title: 'Mug',
-      price: 80000,
-      description: 'bla bla bla bla bla'
-    },
-    {
-      id: '4',
-      image: 'assets/images/pin.png',
-      title: 'Pin',
-      price: 80000,
-      description: 'bla bla bla bla bla'
-    },
-    {
-      id: '5',
-      image: 'assets/images/stickers1.png',
-      title: 'Stickers',
-      price: 80000,
-      description: 'bla bla bla bla bla'
-    },
-    {
-      id: '6',
-      image: 'assets/images/stickers2.png',
-      title: 'Stickers',
-      price: 80000,
-      description: 'bla bla bla bla bla'
-    },
-  ];
+  constructor(
+    private http: HttpClient,
+  ) { }
+
   getAllProducts(){
-    return this.products;
+    let products = this.http.get<IProduct[]>(`${environment.url_api}/products`)
+    return products;
   }
   getProduct(id: string ){
-    let idProduct = this.products.find(item => id === item.id);
-    return idProduct;
+    let product = this.http.get<IProduct>(`${environment.url_api}/products/${id}`)
+    return product;
+  }
+  createProduct(product: IProduct){
+    let newProduct = this.http.post(`${environment.url_api}/products`, product);
+    return newProduct;
   }
 }
