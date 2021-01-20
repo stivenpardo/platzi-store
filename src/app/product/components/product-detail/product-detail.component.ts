@@ -4,7 +4,7 @@ import { IProduct } from 'src/app/IProduct.model';
 import { ProductsService } from '../../../core/services/products/products.service';
 
 @Component({
-  selector: 'app-prduct-detail',
+  selector: 'app-product-detail',
   templateUrl: './product-detail.component.html',
   styleUrls: ['./product-detail.component.css']
 })
@@ -34,11 +34,11 @@ export class ProductDetailComponent implements OnInit {
 
   createProduct() {
     const NEWPRODUCT: IProduct = {
-      id: 'smarth',
-      title: 'smarth Platzi',
-      image: '',
+      id: '33',
+      title: 'Princesa Daiarand',
+      image: '../assets/images/pin.png',
       price: 400.000,
-      description:'Este es el que usted necesita para aprender',
+      description:'Princesa arabe',
     }
     this.productService.createProduct(NEWPRODUCT)
     .subscribe();
