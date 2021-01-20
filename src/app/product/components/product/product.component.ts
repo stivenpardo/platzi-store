@@ -1,4 +1,4 @@
-import { IProduct } from '../../../models/IProduct.model';
+import { IProduct } from '../../../core/models/IProduct.model';
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CartService } from "../../../core/services/cart.service";
 @Component({
