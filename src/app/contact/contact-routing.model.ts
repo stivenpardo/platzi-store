@@ -6,7 +6,6 @@ import { AdminGuard } from "../admin.guard"
 const ROUTES: Routes = [
   {
     path:'',
-    canActivate: [AdminGuard],
     component: ContactComponent
   },
 ];
