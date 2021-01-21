@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules, } from '@angular/router';
 import { DemoComponent } from './demo/demo.component'
 import { LayoutComponent } from './layout/layout.component';
+import { AdminGuard } from "./admin.guard";
 const routes: Routes = [
   {
     path: '',
@@ -29,6 +30,10 @@ const routes: Routes = [
         loadChildren: () => import('./order/order.module').then(m => m.OrderModule)
       },
       {
+        path: 'auth',
+        loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
+      },
+      {
         path: 'demo',
         component: DemoComponent
       },
@@ -36,7 +41,8 @@ const routes: Routes = [
   },
   {
     path: 'admin',
-    loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)
+    loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule),
+    canActivate: [AdminGuard],
   },
   {
     path: '**',

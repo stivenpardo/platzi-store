@@ -4,7 +4,15 @@
 
 export const environment = {
   production: false,
-  url_api : 'http://platzi-store.herokuapp.com'
+  url_api: 'http://platzi-store.herokuapp.com',
+  firebase: {
+    apiKey: "AIzaSyC2v56gN1PFuAKpj4xr9Kx_nuif3cFCRA4",
+    authDomain: "chikensale-5d0c3.firebaseapp.com",
+    projectId: "chikensale-5d0c3",
+    storageBucket: "chikensale-5d0c3.appspot.com",
+    messagingSenderId: "625726071107",
+    appId: "1:625726071107:web:3c2feeabb0c04d70478ff6"
+  }
 };
 
 /*
