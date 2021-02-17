@@ -28,7 +28,6 @@ import { ProductEditComponent } from './components/product-edit/product-edit.com
     ReactiveFormsModule,
     MaterialModule,
     CoreModule,
-    ReactiveFormsModule,
   ]
 })
 export class AdminModule { }

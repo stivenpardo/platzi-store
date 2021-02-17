@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules, } from '@angular/router';
-import { DemoComponent } from './demo/demo.component'
 import { LayoutComponent } from './layout/layout.component';
 import { AdminGuard } from "./admin.guard";
 const routes: Routes = [
@@ -32,10 +31,6 @@ const routes: Routes = [
       {
         path: 'auth',
         loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
-      },
-      {
-        path: 'demo',
-        component: DemoComponent
       },
     ]
   },
