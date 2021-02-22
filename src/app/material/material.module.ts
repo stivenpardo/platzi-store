@@ -17,6 +17,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatMenuModule } from '@angular/material/menu';
 import { LayoutModule } from '@angular/cdk/layout';
 import {MatStepperModule} from '@angular/material/stepper';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import {MatStepperModule} from '@angular/material/stepper';
     MatGridListModule,
     MatMenuModule,
     LayoutModule,
-    MatStepperModule
+    MatStepperModule,
+    MatProgressBarModule,
 
   ], exports:[
     MatButtonModule,
@@ -59,6 +61,8 @@ import {MatStepperModule} from '@angular/material/stepper';
     MatMenuModule,
     LayoutModule,
     MatStepperModule,
+    MatProgressBarModule,
+
   ]
 })
 export class MaterialModule { }
