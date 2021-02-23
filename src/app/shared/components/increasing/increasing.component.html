@@ -1,0 +1,8 @@
+<div class="input-group">
+  <button (click)="ChangeValue(-5)" mat-raised-button color="primary">-</button>
+  <mat-form-field class="example-form-field">
+    <mat-label>Progress</mat-label>
+    <input matInput type="number" [(ngModel)]="progress" min="0" max="100">
+  </mat-form-field>
+  <button (click)="ChangeValue(5)" mat-raised-button color="primary">+</button>
+</div>

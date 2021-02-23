@@ -1,20 +1,24 @@
 <div class="row">
-  <div class="col">
+  <div class="col-xs">
     <mat-card class="progress-bar">
       Process
-      <mat-progress-bar mode="buffer"></mat-progress-bar>
+      <div>
+        <mat-progress-bar mode="buffer" [bufferValue]= "progress1"></mat-progress-bar>
+      </div>
+      <div>
+        <mat-progress-bar mode="buffer" [bufferValue]= "progress2"></mat-progress-bar>
+      </div>
     </mat-card>
   </div>
 </div>
 <div class="row">
-  <div class="col">
-    <div class="input-group">
-      <button mat-raised-button color="primary">-</button>
-      <mat-form-field class="example-form-field">
-        <mat-label>Clearable input</mat-label>
-        <input matInput type="text">
-      </mat-form-field>
-      <button mat-raised-button color="primary">+</button>
-    </div>
+  <div class="col-xs">
+    <app-increasing (outputValue)=" progress1 = $event " [progress]= "progress1"></app-increasing>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs">
+    <app-increasing (outputValue)=" progress2 = $event " [progress]= "progress2"></app-increasing>
+
   </div>
 </div>
